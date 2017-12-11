@@ -6,5 +6,5 @@ import { Component } from '@angular/core'
   styleUrls: ['./entry.styl']
 })
 export class EntryComponent {
-  title = 'app'
+  
 }

@@ -21,6 +21,11 @@
       "styles": [
         "styles.styl"
       ],
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "../node_modules"
+        ]
+      },
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
