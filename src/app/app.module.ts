@@ -2,20 +2,27 @@ import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core'
 import { FlexLayoutModule } from '@angular/flex-layout'
-import { EntryComponent, MaterialModule } from 'app/modules/entry'
+import { AppComponent } from 'app/app'
+import { MaterialModule } from 'app/material.module'
+import { PagesModule } from 'app/pages/pages.module'
+import { rootRouting } from 'app/app.router'
 
 
 @NgModule({
   declarations: [
-    EntryComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     MaterialModule,
     FlexLayoutModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    PagesModule,
+    rootRouting,
   ],
   providers: [],
-  bootstrap: [EntryComponent]
+  bootstrap: [
+    AppComponent,
+  ],
 })
-export class EntryModule { }
+export class AppModule { }
