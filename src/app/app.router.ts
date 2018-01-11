@@ -17,10 +17,6 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent,
   },
-  {
-    path: '**',
-    redirectTo: '',
-  },
 ]
 
 export const rootRouting: ModuleWithProviders = RouterModule.forRoot(routes)

@@ -16,23 +16,7 @@
       </button>
       <h1 class="app-name">InExpenses</h1>
     </mat-toolbar>
-
-    <mat-selection-list>
-      <mat-list-option>
-        <mat-form-field (click)="$event.stopPropagation()">
-          <input matInput value="Sushi">
-        </mat-form-field>
-      </mat-list-option>
-      <mat-list-option>
-        <mat-form-field (click)="$event.stopPropagation()">
-          <input matInput value="Sushi">
-        </mat-form-field>
-      </mat-list-option>
-    </mat-selection-list>
-
-    <button mat-fab color="primary" class="fab-fixed">
-      <mat-icon>add</mat-icon>
-    </button>
+    <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>
 

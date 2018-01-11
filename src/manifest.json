@@ -1,0 +1,16 @@
+{
+  "short_name": "FMNT",
+  "name": "Finance Management",
+  "start_url": "/",
+  "theme_color": "#333",
+  "background_color": "#353543",
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/assets/icons/icon_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
