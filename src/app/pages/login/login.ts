@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { ExpensesService } from 'app/core/services'
+import { ExpenseService } from 'app/core/services'
 import { OnInit } from '@angular/core'
 
 @Component({
@@ -11,13 +11,16 @@ import { OnInit } from '@angular/core'
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private expenses: ExpensesService) { }
+  constructor(private expense: ExpenseService) {
+  }
 
   ngOnInit() {
+    this.getExpenses()
   }
 
   getExpenses() {
-    this.expenses.get()
+    this.expense
+      .create('321', 2, [], '11-11-2018 13:02', 'USD')
+      .subscribe(response => console.log(response.getMessage()))
   }
-
 }

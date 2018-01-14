@@ -6,11 +6,10 @@ export class DataStoreService {
 
   private offlineDataStore = []
 
-  constructor(
-    private http: HttpClient,
-  ) { }
+  constructor(private http: HttpClient,) {
+  }
 
-  get(uri, ) {
+  get(uri,) {
 
   }
 
