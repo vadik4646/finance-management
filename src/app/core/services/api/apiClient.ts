@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch'
+import 'rxjs/add/observable/throw'
 import { ApiResponse } from 'app/core/services/api/apiResponse'
 import { Observable } from 'rxjs/Observable'
 
@@ -12,8 +13,7 @@ export class ApiClient {
   private readonly API_PATH = 'api/'
   private readonly API_URL = this.API_HOST + this.API_PATH
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   get(url, options = {}): Observable<ApiResponse> {
     let headers = this.buildHeaders(options)

@@ -9,6 +9,7 @@ import { rootRouting } from 'app/app.router'
 import { ServicesModule } from 'app/core/services/services.module'
 import { environment } from 'environments/environment'
 import { ServiceWorkerModule } from '@angular/service-worker'
+import { CommonModule } from '@angular/common'
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { ServiceWorkerModule } from '@angular/service-worker'
     AppComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     MaterialModule,
     FlexLayoutModule,

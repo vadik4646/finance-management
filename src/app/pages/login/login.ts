@@ -1,6 +1,7 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { ExpenseService } from 'app/core/services'
-import { OnInit } from '@angular/core'
+
+// ----- ----- ----- -----
 
 @Component({
   selector: 'fm-login',
@@ -11,8 +12,9 @@ import { OnInit } from '@angular/core'
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private expense: ExpenseService) {
-  }
+  constructor(
+    private expense: ExpenseService,
+  ) {}
 
   ngOnInit() {
     this.getExpenses()
@@ -21,6 +23,6 @@ export class LoginComponent implements OnInit {
   getExpenses() {
     this.expense
       .create('321', 2, [], '11-11-2018 13:02', 'USD')
-      .subscribe(response => console.log(response.getMessage()))
+      .subscribe(response => console.log(response.message))
   }
 }

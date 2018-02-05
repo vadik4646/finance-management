@@ -1,1 +1,40 @@
-register
+<form novalidate [formGroup]="registerForm" class="register-form">
+
+  <mat-form-field>
+    <input matInput [autofocus]="true" placeholder="Email" type="email" formControlName="email">
+    <mat-error *ngIf="registerForm.get('email').hasError('required')">
+      Email is required
+    </mat-error>
+    <mat-error *ngIf="registerForm.get('email').hasError('email')">
+      Invalid email format
+    </mat-error>
+    <mat-error *ngIf="registerForm.get('email').hasError('server')">
+      {{registerForm.get('email').getError('server')}}
+    </mat-error>
+  </mat-form-field>
+
+  <ng-container formGroupName="passwordGroup">
+    <mat-form-field>
+      <input matInput placeholder="Pasword" type="password" formControlName="password">
+      <mat-error *ngIf="!isPasswordFilled">
+        Password is required
+      </mat-error>
+      <mat-error *ngIf="!isPasswordMinLength">
+        Minimal length for password: 8
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Retype password" type="password" formControlName="repeatPassword">
+      <mat-error *ngIf="registerForm.get('passwordGroup').hasError('childrenNotEqual')">
+        Passwords do not match
+      </mat-error>
+    </mat-form-field>
+  </ng-container>
+
+  <button class="register-button" (click)="onRegFormSubmit()" [disabled]="registerForm.invalid || registerInProgress" mat-raised-button color="primary" type="button">
+    <span *ngIf="!registerInProgress">Register</span>
+    <mat-spinner *ngIf="registerInProgress" stroke="4" diameter="20" color="accent"></mat-spinner>
+  </button>
+
+</form>

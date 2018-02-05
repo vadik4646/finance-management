@@ -1,3 +1,5 @@
 export { ExpenseService } from './expenseService'
 export { IncomeService } from './incomeService'
 export { AuthenticationService } from './authenticationService'
+export { ApiClient, ApiResponse } from './api'
+export { ServicesModule } from './services.module'

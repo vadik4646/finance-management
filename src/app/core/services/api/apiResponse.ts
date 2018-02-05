@@ -1,9 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http'
 
 export class ApiResponse {
-  private data
-  private validationErrors
-  private message
+  private _data
+  private _validationErrors
+  private _message
 
   constructor(response) {
     if (response instanceof HttpErrorResponse) {
@@ -13,21 +13,21 @@ export class ApiResponse {
     }
   }
 
-  getData() {
-    return this.data
+  get data() {
+    return this._data
   }
 
-  getValidationErrors() {
-    return this.validationErrors
+  get validationErrors() {
+    return this._validationErrors
   }
 
-  getMessage() {
-    return this.message
+  get message() {
+    return this._message
   }
 
   private fill(raw) {
-    this.data = 'data' in raw ? raw.data : null
-    this.validationErrors = 'validationErrors' in raw ? raw.validationErrors : null
-    this.message = 'message' in raw ? raw.message : null
+    this._data = 'data' in raw ? raw.data : null
+    this._validationErrors = 'validationErrors' in raw ? raw.validationErrors : null
+    this._message = 'message' in raw ? raw.message : null
   }
 }
