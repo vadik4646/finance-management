@@ -6,8 +6,8 @@ export class ExpenseService {
   constructor(private apiClient: ApiClient) {
   }
 
-  get() {
-    return this.apiClient.get('expense')
+  get(search = '') {
+    return this.apiClient.get('expense', { params: { search } })
   }
 
   delete(id) {

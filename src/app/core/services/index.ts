@@ -1,3 +1,7 @@
+export { CategoryService } from './categoryService'
+export { CustomizationService } from './customizationService'
+export { LogService } from './logService'
+export { TagService } from './tagService'
 export { ExpenseService } from './expenseService'
 export { IncomeService } from './incomeService'
 export { AuthenticationService } from './authenticationService'

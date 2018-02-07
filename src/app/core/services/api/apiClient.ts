@@ -34,6 +34,6 @@ export class ApiClient {
   private buildHeaders(options) {
     let headers = 'headers' in options ? options.headers : {}
 
-    return new HttpHeaders(Object.assign({ 'X-AUTH-TOKEN': 'dev', 'content-type': 'application/json' }, headers))
+    return new HttpHeaders(Object.assign({ 'content-type': 'application/json' }, headers))
   }
 }

@@ -3,11 +3,10 @@ import { ApiClient } from 'app/core/services/api/apiClient'
 
 @Injectable()
 export class IncomeService {
-  constructor(private apiClient: ApiClient) {
-  }
+  constructor(private apiClient: ApiClient) {}
 
-  get() {
-    return this.apiClient.get('income')
+  get(search = '') {
+    return this.apiClient.get('income', { params: { search } })
   }
 
   delete(id) {

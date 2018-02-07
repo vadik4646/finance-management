@@ -1,0 +1,1 @@
+export { LogType } from './logType'
